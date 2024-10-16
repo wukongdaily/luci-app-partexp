@@ -1,10 +1,11 @@
 name: Build
-# test
 on:
-  push:
-    tags:
-      - v*.**
-
+  workflow_dispatch:
+    inputs:
+      docker_images:
+        description: 'test'
+        required: true
+        default: 'test'  
 jobs:
   build:
     name: Build ${{ matrix.arch }}
